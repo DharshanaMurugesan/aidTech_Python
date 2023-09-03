@@ -1,0 +1,26 @@
+choice='yes'
+while choice=='yes':
+  name = input("Enter your name:")
+  print("Hi",name,"\nKindly note the rules to be followed while playing:\n *The program generates a random number between 1 and 100\n *The user should guess the random number within 10 attempts.")
+  import random
+  n = random.randrange(1,100)
+  guess = int(input("Enter your guessed number:"))
+  attempts = 0
+  while attempts<10:
+      attempts += 1
+      print("Attempt",attempts)
+      guess = int(input("Enter your guessed number:"))
+      while n!=guess:
+          if n>guess:
+              print("The number is too low")
+              guess = int(input("Enter number again:"))
+          elif n<guess:
+              print("The number is too high")
+              guess = int(input("Enter number again:"))
+          else:
+              print("Congratulations! You have guessed the correct number")
+          if attempts==10:
+              print("Sorry your have used all your attempts")
+
+choice = input("Do you want to play again:")
+
